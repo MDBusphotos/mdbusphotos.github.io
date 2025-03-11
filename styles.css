@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Segoe UI;
+}
+
+/* Navigation Bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #254A72;
+  color: white;
+}
+
+/* Flexbox Layout for "Havainnot" Section */
+.havainnot-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px;
+}
+
+.havainnot-text {
+  flex: 1;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.havainnot-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.havainnot-images img {
+  width: 100%;
+  max-width: 500px; /* Suuremmat kuvat */
+  border-radius: 5px;
+}
+
+/* Image Grid */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Suuremmat sarakkeet */
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.column img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .havainnot-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .havainnot-images {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .havainnot-images img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .havainnot-images img {
+    width: 100%;
+  }
+
+  .row {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Yksi kuva per rivi pienillä näytöillä */
+  }
+}
